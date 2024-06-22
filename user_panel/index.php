@@ -100,38 +100,41 @@ include("header.php");
 <section class="tiles">
     <div class="container-fluid py-5">
         <div class="container py-5">
-        <h1 class="text-primary">Our Products</h1>
+            <h1 class="text-primary">Our Products</h1>
             <div class="row g-4">
-                <div class="col-md-6 col-lg-3">
+            <?php
+                    $sql = "select * from product order by id asc limit 8";
+                    $result = mysqli_query($con, $sql);
+                    while ($rows = mysqli_fetch_assoc($result)) {
+                    ?>
+                <div class="col-md-4 col-lg-3">
+                   
+                        <article class="style1">
+                            <span class="image">
                                 <?php
-                                $sql = "select * from product order by id asc limit 4";
-                                $result = mysqli_query($con,$sql);
-                                while($rows = mysqli_fetch_assoc($result)){
+                                echo "<img src=\"/admin/img/product/{$rows['product_image']} \" height=300px; width=300px>"
                                 ?>
-								<article class="style1">
-									<span class="image">
-                                    <?php
-										echo "<img src=\"/admin/img/product/{$rows['product_image']} \" height=300px; width=300px>"
-                                        ?>
-									</span>
-									<a href="product-details.php">
-										<h2><?php echo $rows['product_name'] ?></h2>
-										
-										<p><strong>Rs <?php echo $rows['price'] ?></strong></p>
+                            </span>
+                            <a href="product-details.php">
+                                <h2><?php echo $rows['product_name'] ?></h2>
 
-										<p><?php echo $rows['description'] ?></p>
-									</a>
-                                    <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
-								</article>
-                                <?php } ?>
-							</section>
-                            </div>
-                            </div>
-                            </div>
-                            <br>
-							<p class="text-center"><a href="all_product.php">More Category &nbsp;<i class="fa fa-long-arrow-right"></i></a></p>
-							
-							<br>
+                                <p><strong>Rs <?php echo $rows['price'] ?></strong></p>
+
+                                <p><?php echo $rows['description'] ?></p>
+                            </a>
+                            <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                        </article>
+                    
+                </div>
+                <?php } ?>
+            </div>
+        </div>
+    </div>
+</section>
+<br>
+<p class="text-center"><a href="all_product.php">More Category &nbsp;<i class="fa fa-long-arrow-right"></i></a></p>
+
+<br>
 
 <!-- Fact Start -->
 <div class="container-fluid py-5">

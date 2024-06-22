@@ -69,17 +69,14 @@ include ("../admin/connection.php");
                 <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
                     <div class="navbar-nav mx-auto">
                         <a href="index.php" class="nav-item nav-link active">Home</a>
-                        <a href="shop.php" class="nav-item nav-link">Shop</a>
-                        <a href="shop-detail.php" class="nav-item nav-link">Shop Detail</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu m-0 bg-secondary rounded-0">
+                        <a href="all_product.php" class="nav-item nav-link active">All Product</a>
+                        <a href="contact.php" class="nav-item nav-link">Contact</a>
+                                <div class="dropdown-menu m-0 bg-secondary rounded-0">
                                 <a href="cart.php" class="dropdown-item">Cart</a>
                                 <a href="chackout.php" class="dropdown-item">Chackout</a>
                                 <a href="testimonial.php" class="dropdown-item">Testimonial</a>
                             </div>
                         </div>
-                        <a href="contact.php" class="nav-item nav-link">Contact</a>
                     </div>
                     <div class="d-flex m-3 me-0">
                         <button class="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search text-primary"></i></button>
