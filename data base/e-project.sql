@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 21, 2024 at 10:45 AM
+-- Generation Time: Jun 22, 2024 at 04:19 PM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.1.25
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -216,19 +216,18 @@ INSERT INTO `role` (`id`, `role_name`) VALUES
 CREATE TABLE `sub_cateory` (
   `id` int(11) NOT NULL,
   `main_category_id_FK` int(11) NOT NULL,
-  `sub_category_name` varchar(255) NOT NULL,
-  `sub_category_image` varchar(255) NOT NULL
+  `sub_category_name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `sub_cateory`
 --
 
-INSERT INTO `sub_cateory` (`id`, `main_category_id_FK`, `sub_category_name`, `sub_category_image`) VALUES
-(10, 4, 'makup', ''),
-(11, 4, 'skin care', ''),
-(12, 6, 'wareable', ''),
-(13, 6, 'hangable', '');
+INSERT INTO `sub_cateory` (`id`, `main_category_id_FK`, `sub_category_name`) VALUES
+(10, 4, 'makup'),
+(11, 4, 'skin care'),
+(12, 6, 'wareable'),
+(13, 6, 'hangable');
 
 -- --------------------------------------------------------
 
@@ -251,24 +250,6 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `role_id_FK`, `username`, `email`, `password`) VALUES
 (10, 17, 'muhammad yazdan', 'muhammadyazdan375@gmail.com', '123'),
 (11, 17, 'rizwan khan', 'rizwan@gmail.com', '123');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `users`
---
-
-CREATE TABLE `users` (
-  `email` int(255) NOT NULL,
-  `password` int(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`email`, `password`) VALUES
-(0, 123);
 
 --
 -- Indexes for dumped tables
